@@ -11,4 +11,4 @@ A web and AI project that classifies shoe types such as sneakers, formal shoes, 
 [View on GitHub Pages](https://github.com/alvaro-10-thunderbolt/smart-shoe-classifier-AI.git)
 
 ## 📷 Preview
-![preview]()
+![preview](PORTADA.jpg)
