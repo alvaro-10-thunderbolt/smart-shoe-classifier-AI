@@ -1,0 +1,319 @@
+/* styles.css - diseño inspirado en  mockup Canva */
+
+/* Variables */
+:root{
+  --bg-top: #0f66b3;      /* parte oscura del azul */
+  --bg-bottom: #3bb7d6;   /* degradado claro */
+  --card-bg: rgba(255,255,255,0.06);
+  --label-bg: #7fe0e7;    /* banda turquesa para etiquetas */
+  --text: #0b1830;
+  --white: #ffffff;
+  --radius: 12px;
+  --container-max: 1100px;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Reset ligero */
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Fondo general */
+body{
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+  color: var(--white);
+  min-height: 100vh;
+  -webkit-font-smoothing:antialiased;
+  line-height: 1.2;
+}
+
+/* Header */
+.site-header{
+  padding: 26px 20px;
+}
+.site-header h1{
+  color: rgba(255,255,255,0.95);
+  font-weight: 600;
+  font-size: 34px;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  margin-left: 16px;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.15);
+}
+
+/* Container central */
+.container{
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 35x 55px 95px;
+}
+
+/* --- SECCIÓN 1: HERO / COLLAGE --- */
+.hero{
+  position: relative;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-radius:    29px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding:39px;
+  margin-bottom: 38px;
+  min-height: 390px;
+}
+
+/* Extra text styles */
+.subtitle{
+  margin-top: 20px;
+  font-size: 19px;
+  font-weight: 300;
+  max-width: 700px;
+  color: rgba(255,255,255,0.85);
+}
+
+.hero-left h2, .gallery-section h2{
+  margin-bottom: 18px;
+  font-size: 30px;
+  font-weight: 600px;
+  color: #fff;
+}
+
+.hero-left p, .section-desc{
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+}
+
+.hero-left ul{
+  margin-left: 20px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.9);
+  list-style: disc;
+}
+
+.hero-left ul li{
+  margin-bottom: 8px;
+}
+
+/* collage a la derecha */
+.collage{
+  margin-left: auto;
+  width: 70%;
+  display: grid;
+  grid-template-rows:(4);
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+  align-items: center;
+  justify-items: center;
+}
+
+/* imágenes collage (estilo cuadrito con borde blanco) */
+.collage-img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 9px;
+  border: 9px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+/* variantes para visual como en tu mockup (puedes ajustar tamaños con clases) */
+.collage-img.a{ height: 270px;}
+.collage-img.b{ height: 280px; }
+.collage-img.c{ height: 290px; }
+.collage-img.d{ height: 270px; }
+.collage-img.e{ height: 280px; }
+.collage-img.f{ height: 280px; }
+.collage-img.g{ height: 290px; }
+.collage-img.h{ height: 290px; }
+
+.gallery-text {
+  order: 1; /* Texto al lado izquierdo */
+  flex: 1 1 400px;
+}
+.gallery-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* crea columnas flexibles */
+  gap:240px;
+  justify-items: center;
+  align-items: center;
+}
+
+.gallery-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra las imágenes */
+  gap:160px;
+  max-width: 1200px;
+  margin: 2 auto;
+}
+
+.gallery-section img {
+  width: 200%;  /* puedes ajustar a 220px o 250px si quieres más grande */
+  height: 400px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+}
+
+.gallery-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+
+.gallery-section img {
+  width: 450px;   /* ancho actual */
+  height: auto;
+  border-radius: 19px;
+  transition: transform 0.8s ease;
+}
+
+/* --- SECCIÓN 2: Galería --- */
+.gallery-section{
+  position: relative;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding-left: 90px; /* espacio donde aparece la badge-2 */
+}
+
+/* grid con 2 columnas de cards */
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 29px;
+  width: 100%;
+}
+
+/* Card / figure */
+.card{
+  background: var(--card-bg);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 9px 40px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Imagen dentro de card */
+.card img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* La banda de etiqueta en la parte inferior (simula tu turquesa) */
+.label{
+  background: var(--label-bg);
+  color: #0b3941;
+  font-weight: 500;
+  padding: 18px 22px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Footer pequeño */
+.site-footer{
+  margin-top: 26px;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  opacity: 0.9;
+  font-size: 13px;
+}
+
+/* --- Responsive: Ajustes para móvil --- */
+@media (max-width: 900px){
+  .collage{ width: 50%; grid-template-columns: 1fr 1fr; }
+  .collage-img{ height: 100px; }
+  .card img{ height: 160px; }
+  }
+
+@media (max-width: 700px){
+  .hero{ flex-direction: column; padding: 18px; min-height: auto; }
+  .gallery-section{ flex-direction: column; padding-left: 0; }
+  .gallery-grid{grid: row 4;}
+  .gallery-grid{ grid-template-columns: 1fr; }
+  .collage{ width: 100%; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+
+@media (max-width: 768px) {
+  .section1 {
+    flex-direction: column;
+  }
+  .collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* === Distribución de secciones === */
+
+/* ===== SECCIÓN 1 ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 40px 10%;
+}
+
+/* Imágenes a la izquierda, texto a la derecha */
+.hero-left {
+  order: 2; /* Mueve el texto al lado derecho */
+  flex: 1 1 400px;
+}
+
+.collage {
+ flex: 1;
+ order: 1;
+ display: grid;
+ grid-template-columns:(2,1fr);
+grid-template-rows:  repeat(3, 1fr);
+gap: 15px;
+justify-items: center;
+}
+.collage-img {
+  width: 100%;
+  max-width: 290px;
+  box-shadow:0 5px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease,
+  box-shadow 0.3s ease;
+}
+
+.collage-img:hover {
+  transform:scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+.collage {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== SECCIÓN 2 ===== */
+.gallery-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 10%;
+}
+
+/* En la sección 2, texto a la izquierda, imágenes a la derecha */
+.gallery-grid {
+  order: 2; /* Galería al lado derecho */
+  flex: 1 1 400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.gallery-section .badge-2 {
+  order: 1;
+}
+
+
+
